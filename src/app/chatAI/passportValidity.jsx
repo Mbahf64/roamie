@@ -17,40 +17,40 @@ const passportValidity = () => {
 
     return (
         <Select value={selectedCountry} onValueChange={setSelectedCountry}>
-            <SelectTrigger className="w-[100px] text-sm">
+            <SelectTrigger className="w-[150px] text-sm">
                 <SelectValue placeholder="Your Country" />
             </SelectTrigger>
             <SelectContent>
-                <SelectGroup>
-
+            <SelectGroup>
                     <SelectItem value="Less than 90 Days">
-                        <FaFlagUsa className="w-5 h-5 mr inline" />
-                        <span className='ml-3'>Less than 90 Days</span>
+                    <img className="w-3 h-3 mr-1 inline" src="./timer.svg" alt="" />
+                        <span className='ml-1 text-[10px] '>Less than 90 days</span>
+
                     </SelectItem>
 
                     <SelectItem value="90 days to 6 months">
-                        <FaCanadianMapleLeaf className="w-5 h-5 mr-2 inline" />
-                        <span className='ml-3'>90 days to 6 months</span>
+                      <img className="w-3 h-3 mr-1 inline" src="./timer.svg" alt="" />
+                        <span className='pl-1 text-[10px] '>90 days to 6 month</span>
                     </SelectItem>
 
                     <SelectItem value="6 months to 1 year">
-                        <img className="w-5 h-5 mr-5 inline" src="./nigeria.png" alt="" />
-                        <span className='ml-3'>6 months to 1 year</span>
+                       <img className="w-3 h-3 mr-1 inline" src="./timer.svg" alt="" />
+                        <span className='pl-1 text-[10px]'>6 months to 1 year</span>
                     </SelectItem>
 
                     <SelectItem value="1 year to 3 years">
-                        <FiFlag className="w-5 h-5 mr-2 inline" /> {/* Generic flag icon */}
-                        <span className='ml-3'>1 year to 3 years</span>
+                      <img className="w-3 h-3 mr-1 inline" src="./timer.svg" alt="" />
+                        <span className='ml-1 text-[10px]'>1 year to 3 years</span>
                     </SelectItem>
 
                     <SelectItem value="More than 3 years">
-                        <FaFlagCheckered className="w-5 h-5 mr-2 inline" />
-                        <span className='ml-3'>More than 3 years</span>
+                       <img className="w-3 h-3 mr-1 inline" src="./timer.svg" alt="" />
+                        <span className='ml-1 text-[10px]'>More than 3 years</span>
                     </SelectItem>
 
                     <SelectItem value="Not sure yet">
-                        <FaFlagCheckered className="w-5 h-5 mr-2 inline" />
-                        <span className='ml-3'>Not sure </span>
+                       <img className="w-3 h-3 mr-1 inline" src="./timer.svg" alt="" />
+                        <span className='ml-1 text-[10px]'>Not sure</span>
                     </SelectItem>
                 </SelectGroup>
             </SelectContent>

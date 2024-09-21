@@ -17,35 +17,40 @@ const selectCountry = () => {
 
     return (
         <Select value={selectedCountry} onValueChange={setSelectedCountry}>
-            <SelectTrigger className="w-[100px] text-sm">
-                <SelectValue placeholder="" />
+
+            <SelectTrigger className="w-[150px] text-sm">
+                <SelectValue placeholder="Your Country" />
             </SelectTrigger>
             <SelectContent>
                 <SelectGroup>
-
-                    <SelectItem value="United kingdom">
-                        <img className="w-5 h-5 mr-5 inline" src="./UK_01.svg" alt="" />
-                        <span className='ml-3'>United kingdom</span>
+                    <SelectItem value="United kingdom" >
+                        <img className="w-3 h-3 mr-1 inline" src="./nigeria.png" alt="" />
+                        <span className='ml-1 text-[10px]'>United kingdom</span>
                     </SelectItem>
 
-                    <SelectItem value="Rome">
-                        <FaCanadianMapleLeaf className="w-5 h-5 mr-2 inline" />
-                        <span className='ml-3'>Rome</span>
+                    <SelectItem value="90 days to 6 months">
+                        <img className="w-3 h-3 mr-1 inline" src="./nigeria.png" alt="" />
+                        <span className='ml-1 text-[10px] '>Japan</span>
                     </SelectItem>
 
-                    <SelectItem value="Nigeria">
-                        <img className="w-5 h-5 mr-5 inline" src="./nigeria.png" alt="" />
-                        <span className='ml-3'>Nigeria</span>
+                    <SelectItem value="6 months to 1 year">
+                        <img className="w-3 h-3 mr-1 inline" src="./nigeria.png" alt="" />
+                        <span className='ml-1 text-[10px] '>Nigeria</span>
                     </SelectItem>
 
-                    <SelectItem value="Tokyo">
-                        <FiFlag className="w-5 h-5 mr-2 inline" /> {/* Generic flag icon */}
-                        <span className='ml-3'>Tokyo</span>
+                    <SelectItem value="1 year to 3 years">
+                        <img className="w-3 h-3 mr-1 inline" src="./nigeria.png" alt="" />
+                        <span className='ml-1 text-[10px] '>USA</span>
                     </SelectItem>
 
-                    <SelectItem value="Paris">
-                        <FaFlagCheckered className="w-5 h-5 mr-2 inline" />
-                        <span className='ml-3'>Paris</span>
+                    <SelectItem value="More than 3 years">
+                        <img className="w-3 h-3 mr-1 inline" src="./nigeria.png" alt="" />
+                        <span className='ml-1 text-[10px] '>Ghana</span>
+                    </SelectItem>
+
+                    <SelectItem value="Not sure yet">
+                        <img className="w-3 h-3 mr-1 inline" src="./nigeria.png" alt="" />
+                        <span className='ml-1 text-[10px]'>Spain</span>
                     </SelectItem>
                 </SelectGroup>
             </SelectContent>

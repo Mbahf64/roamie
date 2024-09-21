@@ -25,7 +25,7 @@ const TextAreaWithIcons = () => {
           placeholder="How can Roamie help you today?"
           value={text}
           onChange={handleInput}
-          className="resize-none w-[90vw] lg:w-[50vw] text-left  text-[#646d80] font-normal px-4 py-4 rounded-2xl border-none shadow text-sm focus:outline-none focus:border-transparent"
+          className="resize-none w-[90vw] lg:w-[55vw] 2xl:w-[40vw] text-left  text-[#646d80] font-normal px-4 py-4 rounded-2xl border-none shadow text-sm focus:outline-none focus:border-transparent"
           data-gramm="false" // Disable Grammarly on this textarea
           style={{
             paddingTop: '16px',  // Fixed padding at the top
