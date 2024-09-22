@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import PassportValidity from "./passportValidity";
 import ReasonForTravelling from "./reasonForTravelling";
@@ -9,11 +9,27 @@ import StayingFor from "./stayingFor";
 import Textarea from "./textArea";
 import Suggestion from "./suggestions";
 import Recentchat from "./recentChat";
- import Sidebar from "./sidebar"; 
+import Sidebar from "./sidebar";
+import BottomIcon from "./bottomIcon";
+import Select from "../select"
 
 export default function Home() {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false); // State to control sidebar visibility
+
   return (
     <main className="sf-pro">
+      <header className="flex justify-between items-center mx-[1.3em] lg:mx-[1em]  mt-9 ">
+        <img src="/roamie_logo.svg" alt="logo" className="fixed" />
+
+        <div className="flex flex-row items-center justify-center fixed right-5 mt-4">
+          <span className="text-[#646d80] text-[12px] font-normal pr-2 font-['SF Pro'] leading-[14px]">
+            You’re from
+          </span>
+          <Select />
+        </div>
+      </header>
+
+      {/* Background Image */}
       <div className="fixed inset-0 -z-10">
         <Image
           src="/background.svg"
@@ -23,7 +39,11 @@ export default function Home() {
         />
       </div>
 
-<Sidebar />
+      {/* Sidebar component with control over its state */}
+      <Sidebar isOpen={isSidebarOpen} setIsOpen={setIsSidebarOpen} />
+
+      {/* Conditionally render BottomIcon when sidebar is closed */}
+      {!isSidebarOpen && <BottomIcon />}
 
       <div className="flex flex-col items-center justify-center max-w-full h-full mt-[4rem] 2xl:mt-[8em]">
         <div className="w-[90vw] md:w-[650px] md:h-[95px] h-[159px] px-4 py-8 bg-white/30 rounded-lg shadow flex-col justify-center items-center flex">

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { LuHelpCircle } from "react-icons/lu";
 
 const EmailButtonWithPopover = () => {
   const [isPopoverVisible, setPopoverVisible] = useState(false);
@@ -66,7 +67,7 @@ const EmailButtonWithPopover = () => {
           animate={{ opacity: 1, y: 0 }} // Animate to full visibility and move up
           exit={{ opacity: 0, y: 20 }} // Animate out back down
           transition={{ duration: 0.3, ease: "easeInOut" }} // Smooth animation
-          className="absolute bottom-full left-0 mb-2 w-[227px] h-[330px] bg-white p-4 rounded-2xl shadow border border-[#e5eaf0]"
+          className="absolute bottom-full left-0 mb-2 w-[227px] 2xl:w-[242px] h-[330px] bg-white p-4 rounded-2xl shadow border border-[#e5eaf0]"
           style={{ zIndex: 10 }}
         >
           <div className="flex flex-col gap-4">
@@ -77,22 +78,24 @@ const EmailButtonWithPopover = () => {
               <div className="flex gap-2 items-center justify-start">
                 <img src="./profile.svg" alt="profile" />
                 <div>
-                  <div className="text-[#292d32] text-sm font-normal font-['SF Pro'] leading-none">
-                    Personal
+                  <div className="text-[#292d32] text-sm font-normal font-['SF Pro'] leading-none cursor-pointer">
+                    Micheal
                   </div>
-                  <div className="w-[54px] text-[#646d80] text-xs font-normal font-['SF Pro'] leading-[14.40px] tracking-tight">
-                    Free plan
+                  <div className="h-[13px] px-1 py-px rounded-sm border border-[#e5eaf0] justify-center items-center gap-2 inline-flex cursor-pointer">
+                    <div className="text-[#646d80] text-[9px] font-normal font-['SF Pro'] leading-[11.20px] tracking-tight">
+                      Free plan
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="text-[#646d80] text-sm font-normal font-['SF Pro'] leading-none">
+            <div className="text-[#646d80] text-sm font-normal font-['SF Pro'] leading-none cursor-pointer">
               Settings
             </div>
             {/* Appearance Section */}
             <div className="relative">
               <div
-                className="flex gap-24 cursor-pointer"
+                className="flex gap-24 2xl:gap-[120px] cursor-pointer"
                 onClick={toggleAppearancePopover}
               >
                 <div className="text-[#646d80] text-sm font-normal font-['SF Pro'] leading-none">
@@ -128,7 +131,7 @@ const EmailButtonWithPopover = () => {
               )}
             </div>
 
-            <div className="text-[#646d80] text-sm font-normal font-['SF Pro'] leading-none">
+            <div className="text-[#646d80] text-sm font-normal font-['SF Pro'] leading-none cursor-pointer">
               Featured Preview
             </div>
 
@@ -137,7 +140,7 @@ const EmailButtonWithPopover = () => {
             {/* Learn More Section */}
             <div className="relative">
               <div
-                className="flex gap-24 cursor-pointer"
+                className="flex gap-24 2xl:gap-[120px] cursor-pointer"
                 onClick={toggleLearnMorePopover}
               >
                 <div className="text-[#646d80] text-sm font-normal font-['SF Pro'] leading-none">
@@ -155,19 +158,19 @@ const EmailButtonWithPopover = () => {
                   className="absolute -top-2 left-full ml-2 w-[158px] bg-white p-4 rounded-lg shadow border border-[#e5eaf0]"
                 >
                   <div className="flex flex-col gap-3">
-                    <div className="flex gap-3">
+                    <div className="flex gap-3 cursor-pointer">
                       <div className="w-28 text-[#646d80] text-xs font-normal font-['SF Pro'] leading-[14.40px] tracking-tight">
                         About Roamie
                       </div>
                       <img src="./system.svg" alt="system" />
                     </div>
-                    <div className="flex gap-3">
+                    <div className="flex gap-3 cursor-pointer">
                       <div className="w-28 text-[#646d80] text-xs font-normal font-['SF Pro'] leading-[14.40px] tracking-tight">
                         Terms of use
                       </div>
                       <img src="./system.svg" alt="system" />
                     </div>
-                    <div className="flex gap-3">
+                    <div className="flex gap-3 cursor-pointer">
                       <div className="w-28 text-[#646d80] text-xs font-normal font-['SF Pro'] leading-[14.40px] tracking-tight">
                         Privacy Policy
                       </div>
@@ -178,18 +181,24 @@ const EmailButtonWithPopover = () => {
               )}
             </div>
 
-            <div className="text-[#646d80] text-sm font-normal font-['SF Pro'] leading-none">
+            <div className="text-[#646d80] text-sm font-normal font-['SF Pro'] leading-none cursor-pointer">
               Help & Support
             </div>
 
             <hr />
 
-            <div className="text-[#646d80] text-sm font-normal font-['SF Pro'] leading-none">
+            <div className="text-[#646d80] text-sm font-normal font-['SF Pro'] leading-none cursor-pointer">
               Log Out
             </div>
           </div>
         </motion.div>
       )}
+      <div className="flex gap-1 cursor-pointer justify-end mr-[16px] mt-2">
+      <LuHelpCircle size="15" className="text-[#646d80]"/>
+        <div className="text-[#646d80] text-xs font-normal font-['SF Pro'] leading-[14.40px] tracking-tight">
+          Help & Support
+        </div>
+      </div>
     </div>
   );
 };
