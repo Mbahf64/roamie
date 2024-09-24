@@ -28,7 +28,7 @@ const EmailButtonWithPopover = () => {
     setAppearancePopoverVisible(false); // Close appearance when learn more is opened
   };
 
-  const handleAppearanceSelection = (option) => {
+  const handleAppearanceSelection = (option: string) => {
     setSelectedAppearance(option); // Set selected option
   };
 
