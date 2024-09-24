@@ -2,9 +2,21 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-export default function CountryImageGrid({ countries }) {
+interface Country {
+  id: number;
+  name: string;
+  flag: string;
+  text: string;
+  image: string;
+}
+
+interface CountryImageGridProps {
+  countries: Country[]; // Specify the type of countries prop
+}
+
+export default function CountryImageGrid({ countries }: CountryImageGridProps) {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-3  ">
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-3">
       {countries.map((country) => (
         <Link
           key={country.id}
@@ -13,7 +25,7 @@ export default function CountryImageGrid({ countries }) {
             query: { country: country.name, text: country.text },
           }}
         >
-          <div className="relative overflow-hidden rounded-lg cursor-pointer w">
+          <div className="relative overflow-hidden rounded-lg cursor-pointer">
             <Image
               className="w-full h-auto object-cover"
               alt={country.name}
@@ -42,5 +54,3 @@ export default function CountryImageGrid({ countries }) {
     </div>
   );
 }
-
-// sm:w-[306px] sm:h-[200px] md:w-[362px] md:h-[446px]

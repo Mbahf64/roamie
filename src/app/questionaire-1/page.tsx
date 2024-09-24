@@ -53,7 +53,7 @@ export default function Page() {  // Changed 'page' to 'Page'
     }
   }, [searchTerm]);
 
-  const handleSearch = (e) => {
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value);
   };
 

@@ -2,9 +2,14 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Profile from "./profile";
 import Image from "next/image";
-Image;
 
-const Sidebar = ({ isOpen, setIsOpen }) => {
+interface SidebarProps {
+  isOpen: boolean;
+  setIsOpen: (isOpen: boolean) => void;
+}
+
+const Sidebar: React.FC<SidebarProps> = ({ isOpen, setIsOpen }) => {
+  
   const [isLocked, setIsLocked] = useState(false);
   const [showTooltip, setShowTooltip] = useState(false);
 

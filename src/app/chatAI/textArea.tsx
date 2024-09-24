@@ -1,20 +1,21 @@
 import React, { useState, useRef } from "react";
 import Image from "next/image";
 
-const TextAreaWithIcons = () => {
+const TextAreaWithIcons: React.FC = () => {
   const [text, setText] = useState(""); // State to track the input
-  const textAreaRef = useRef(null); // Ref to track the textarea
-
+   const textAreaRef = useRef<HTMLTextAreaElement | null>(null);
   // Function to dynamically adjust height
-  const handleInput = (e) => {
+  const handleInput = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setText(e.target.value);
     const textarea = textAreaRef.current;
-
-    // Reset height first to adjust for shrinking
-    textarea.style.height = "auto";
-
-    // Set the height based on the scrollHeight (the total height of the content)
-    textarea.style.height = `${textarea.scrollHeight}px`;
+  
+    if (textarea) {
+      // Reset height first to adjust for shrinking
+      textarea.style.height = "auto";
+  
+      // Set the height based on the scrollHeight (the total height of the content)
+      textarea.style.height = `${textarea.scrollHeight}px`;
+    }
   };
 
   return (
