@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Image from "next/image";Image
-import { FiFlag } from 'react-icons/fi'; // Import flag icons (or other icons based on preference)
-import { FaFlagUsa, FaFlag, FaCanadianMapleLeaf, FaFlagCheckered } from 'react-icons/fa'; // Example for other country flags
+
 
 import {
     Select,

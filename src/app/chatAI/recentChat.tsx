@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import Alert from "./alert";
 import Image from "next/image";
@@ -63,9 +63,9 @@ const suggestionsData = [
 const recentChat = () => {
   const [isGridVisible, setIsGridVisible] = useState(true);
 
-  const toggleGridVisibility = () => {
-    setIsGridVisible(!isGridVisible);
-  };
+  // const toggleGridVisibility = () => {
+  //   setIsGridVisible(!isGridVisible);
+  // };
 
   return (
     <div className="">

@@ -55,6 +55,7 @@ const CountryImageGrid = () => {
               src={country.image}
               width={32}
               height={32}
+              alt=""
             />
             <div className="absolute inset-0 flex flex-col items-start justify-center ml-8 w-[101.52px]">
               <p className="text-[#646d80] text-xl font-normal text-left">

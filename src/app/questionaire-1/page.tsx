@@ -4,7 +4,6 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Input from "./input";
-import Search from "./search";
 import CountryImageGrid from "./countryImageGrid";
 import Select from "../select";
 

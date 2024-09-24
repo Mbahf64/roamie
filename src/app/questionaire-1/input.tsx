@@ -3,10 +3,8 @@ import { Search } from "lucide-react";
 
 
 export default function input({ value, onChange }) {
-  const [isFocused, setIsFocused] = useState(false);
-
-  const handleFocus = () => setIsFocused(true);
-  const handleBlur = () => setIsFocused(value !== ""); // Keeps focused state if there's input.
+ 
+ 
 
   return (
     <>
