@@ -6,12 +6,11 @@ import {
     SelectContent,
     SelectGroup,
     SelectItem,
-    SelectLabel,
     SelectTrigger,
     SelectValue,
 } from "@/components/ui/select"
 
-const passportValidity = () => {
+const PassportValidity = () => {
     const [selectedCountry, setSelectedCountry] = useState("Not sure yet");
 
     return (
@@ -63,4 +62,4 @@ const passportValidity = () => {
     )
 }
 
-export default passportValidity
+export default PassportValidity

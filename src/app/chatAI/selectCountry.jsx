@@ -7,12 +7,11 @@ import {
     SelectContent,
     SelectGroup,
     SelectItem,
-    SelectLabel,
     SelectTrigger,
     SelectValue,
 } from "@/components/ui/select"
 
-const selectCountry = () => {
+const SelectCountry = () => {
     const [selectedCountry, setSelectedCountry] = useState("United kingdom"); // Set Nigeria as default
 
     return (
@@ -64,4 +63,4 @@ const selectCountry = () => {
     )
 }
 
-export default selectCountry
+export default SelectCountry

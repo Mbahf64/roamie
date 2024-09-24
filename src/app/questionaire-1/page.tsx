@@ -38,7 +38,7 @@ const countryData = [
   },
 ];
 
-export default function page() {
+export default function Page() {  // Changed 'page' to 'Page'
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredCountries, setFilteredCountries] = useState(countryData);
 
@@ -70,7 +70,7 @@ export default function page() {
 
         <div className="flex flex-row items-center justify-center fixed right-5 mt-4">
           <span className="text-[#646d80] text-[12px] font-normal pr-2 font-['SF Pro'] leading-[14px]">
-            You’re from
+            You&#39;re from  {/* Escaped apostrophe */}
           </span>
           <Select />
         </div>
@@ -115,7 +115,7 @@ export default function page() {
 
         <div className="h-5 justify-center items-center gap-[5px] flex mt-[1rem] md:hidden">
           <div className="text-[#646d80] text-sm font-normal font-['SF Pro'] leading-tight">
-            Can't find your City?
+            Can&#39;t find your City?  {/* Escaped apostrophe */}
           </div>
           <div className="text-[#292d32] text-sm font-normal font-['SF Pro'] underline leading-tight">
             Tell us where it is

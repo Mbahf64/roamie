@@ -60,7 +60,7 @@ const suggestionsData = [
   },
 ];
 
-const recentChat = () => {
+const RecentChat = () => {
   const [isGridVisible, setIsGridVisible] = useState(true);
 
   // const toggleGridVisibility = () => {
@@ -129,4 +129,4 @@ const recentChat = () => {
   );
 };
 
-export default recentChat;
+export default RecentChat;

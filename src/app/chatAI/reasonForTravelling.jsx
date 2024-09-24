@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import Image from "next/image";Image
 
 
@@ -8,12 +8,11 @@ import {
   SelectContent,
   SelectGroup,
   SelectItem,
-  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
 
-const reasonForTravelling = () => {
+const ReasonForTravelling = () => {
   const [selectedCountry, setSelectedCountry] = useState("Tourism"); // Set Nigeria as default
 
   return (
@@ -65,4 +64,4 @@ const reasonForTravelling = () => {
   )
 }
 
-export default reasonForTravelling
+export default ReasonForTravelling

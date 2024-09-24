@@ -9,7 +9,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-const select = () => {
+const Country = () => {
   const [selectedCountry, setSelectedCountry] = useState("nigeria"); // Set Nigeria as default
 
   return (
@@ -89,4 +89,4 @@ const select = () => {
     </Select>
   );
 };
-export default select;
+export default Country;

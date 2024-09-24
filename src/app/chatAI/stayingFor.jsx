@@ -7,12 +7,11 @@ import {
     SelectContent,
     SelectGroup,
     SelectItem,
-    SelectLabel,
     SelectTrigger,
     SelectValue,
 } from "@/components/ui/select"
 
-const stayingFor = () => {
+const StayingFor = () => {
     const [selectedCountry, setSelectedCountry] = useState("Less than 90 Days"); // Set Nigeria as default
 
     return (
@@ -65,4 +64,4 @@ const stayingFor = () => {
     )
 }
 
-export default stayingFor
+export default StayingFor
