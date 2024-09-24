@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Image from "next/image";
 import { FiFlag } from 'react-icons/fi'; // Import flag icons (or other icons based on preference)
 import { FaFlagUsa, FaFlag, FaCanadianMapleLeaf, FaFlagCheckered } from 'react-icons/fa'; // Example for other country flags
 
@@ -13,7 +14,7 @@ import {
 } from "@/components/ui/select"
 
 const passportValidity = () => {
-    const [selectedCountry, setSelectedCountry] = useState("Not sure yet"); 
+    const [selectedCountry, setSelectedCountry] = useState("Not sure yet");
 
     return (
         <Select value={selectedCountry} onValueChange={setSelectedCountry}>
@@ -21,35 +22,41 @@ const passportValidity = () => {
                 <SelectValue placeholder="Your Country" />
             </SelectTrigger>
             <SelectContent>
-            <SelectGroup>
+                <SelectGroup>
                     <SelectItem value="Less than 90 Days">
-                    <img className="w-3 h-3 mr-1 inline" src="./timer.svg" alt="" />
-                        <span className='ml-1 text-[10px] '>Less than 90 days</span>
+                        <Image className="w-3 h-3 mr-1 inline" src="./timer.svg" alt="" width={12}
+                            height={12} />
+                        <span className='ml-1 text-[10px]'>Less than 90 days</span>
 
                     </SelectItem>
 
                     <SelectItem value="90 days to 6 months">
-                      <img className="w-3 h-3 mr-1 inline" src="./timer.svg" alt="" />
-                        <span className='pl-1 text-[10px] '>90 days to 6 month</span>
+                        <Image className="w-3 h-3 mr-1 inline" src="./timer.svg" alt="" width={12}
+                            height={12} />
+                        <span className='ml-0.9 text-[10px]'>90 days to 6 month</span>
                     </SelectItem>
 
                     <SelectItem value="6 months to 1 year">
-                       <img className="w-3 h-3 mr-1 inline" src="./timer.svg" alt="" />
-                        <span className='pl-1 text-[10px]'>6 months to 1 year</span>
+                        <Image className="w-3 h-3 mr-1 inline" src="./timer.svg" alt="" width={12}
+                            height={12} />
+                        <span className='ml-1 text-[10px]'>6 months to 1 year</span>
                     </SelectItem>
 
                     <SelectItem value="1 year to 3 years">
-                      <img className="w-3 h-3 mr-1 inline" src="./timer.svg" alt="" />
+                        <Image className="w-3 h-3 mr-1 inline" src="./timer.svg" alt="" width={12}
+                            height={12} />
                         <span className='ml-1 text-[10px]'>1 year to 3 years</span>
                     </SelectItem>
 
                     <SelectItem value="More than 3 years">
-                       <img className="w-3 h-3 mr-1 inline" src="./timer.svg" alt="" />
+                        <Image className="w-3 h-3 mr-1 inline" src="./timer.svg" alt="" width={12}
+                            height={12} />
                         <span className='ml-1 text-[10px]'>More than 3 years</span>
                     </SelectItem>
 
                     <SelectItem value="Not sure yet">
-                       <img className="w-3 h-3 mr-1 inline" src="./timer.svg" alt="" />
+                        <Image className="w-3 h-3 mr-1 inline" src="./timer.svg" alt="" width={12}
+                            height={12} />
                         <span className='ml-1 text-[10px]'>Not sure</span>
                     </SelectItem>
                 </SelectGroup>

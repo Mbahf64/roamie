@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { LuHelpCircle } from "react-icons/lu";
+import Image from "next/image";
 
 const EmailButtonWithPopover = () => {
   const [isPopoverVisible, setPopoverVisible] = useState(false);
@@ -44,14 +45,16 @@ const EmailButtonWithPopover = () => {
         className="w-[227px] 2xl:w-[242px] h-12 pl-2 pr-4 py-2 bg-[#f6faff] rounded-lg border border-[#dadfe4] justify-start items-center gap-2 inline-flex cursor-pointer"
         onClick={togglePopover}
       >
-        <img src="./profile.svg" alt="profile" />
-        <div className="flex items-center gap-5 2xl:gap-8">
-          <div className="h-4 text-[#292d32] text-[11px] font-normal leading-none">
+        <Image src="./profile.svg" alt="profile" width={32} height={32} />
+        <div className="flex items-center gap-5 2xl:gap-5.5 ">
+          <div className="h-4 text-[#292d32] text-[12px] font-normal leading-none">
             mbabright2105@gmail.com
           </div>
           {/* Arrow that rotates */}
-          <img
+          <Image
             src="./arrow-up.svg"
+            width={14}
+            height={14}
             alt="arrow"
             className={`transition-transform duration-300 ${
               isPopoverVisible ? "rotate-180" : ""
@@ -76,7 +79,12 @@ const EmailButtonWithPopover = () => {
                 mbabright2105@gmail.com
               </div>
               <div className="flex gap-2 items-center justify-start">
-                <img src="./profile.svg" alt="profile" />
+                <Image
+                  src="./profile.svg"
+                  alt="profile"
+                  width={32}
+                  height={32}
+                />
                 <div>
                   <div className="text-[#292d32] text-sm font-normal font-['SF Pro'] leading-none cursor-pointer">
                     Micheal
@@ -101,7 +109,12 @@ const EmailButtonWithPopover = () => {
                 <div className="text-[#646d80] text-sm font-normal font-['SF Pro'] leading-none">
                   Appearance
                 </div>
-                <img src="./arrow-right(2).svg" alt="arrow-right" />
+                <Image
+                  src="./arrow-right(2).svg"
+                  alt="arrow-right"
+                  width={12}
+                  height={12}
+                />
               </div>
 
               {isAppearancePopoverVisible && (
@@ -118,12 +131,22 @@ const EmailButtonWithPopover = () => {
                       className="flex items-center gap-2 cursor-pointer mb-2" // Added mb-2 for spacing
                       onClick={() => handleAppearanceSelection(option.label)}
                     >
-                      <img src={option.icon} alt={option.label} />
+                      <Image
+                        src={option.icon}
+                        alt={option.label}
+                        width={12}
+                        height={12}
+                      />
                       <div className="w-28 text-[#646d80] text-xs font-normal font-['SF Pro'] leading-[14.40px] tracking-tight">
                         {option.label}
                       </div>
                       {selectedAppearance === option.label && (
-                        <img src="./check-icon.svg" alt="Selected" />
+                        <Image
+                          src="./check-icon.svg"
+                          alt="Selected"
+                          width={12}
+                          height={12}
+                        />
                       )}
                     </div>
                   ))}
@@ -146,7 +169,12 @@ const EmailButtonWithPopover = () => {
                 <div className="text-[#646d80] text-sm font-normal font-['SF Pro'] leading-none">
                   Learn more
                 </div>
-                <img src="./arrow-right(2).svg" alt="arrow-right" />
+                <Image
+                  src="./arrow-right(2).svg"
+                  alt="arrow-right"
+                  width={12}
+                  height={12}
+                />
               </div>
 
               {isLearnMorePopoverVisible && (
@@ -162,19 +190,34 @@ const EmailButtonWithPopover = () => {
                       <div className="w-28 text-[#646d80] text-xs font-normal font-['SF Pro'] leading-[14.40px] tracking-tight">
                         About Roamie
                       </div>
-                      <img src="./system.svg" alt="system" />
+                      <Image
+                        src="./system.svg"
+                        alt="system"
+                        width={12}
+                        height={12}
+                      />
                     </div>
                     <div className="flex gap-3 cursor-pointer">
                       <div className="w-28 text-[#646d80] text-xs font-normal font-['SF Pro'] leading-[14.40px] tracking-tight">
                         Terms of use
                       </div>
-                      <img src="./system.svg" alt="system" />
+                      <Image
+                        src="./system.svg"
+                        alt="system"
+                        width={12}
+                        height={12}
+                      />
                     </div>
                     <div className="flex gap-3 cursor-pointer">
                       <div className="w-28 text-[#646d80] text-xs font-normal font-['SF Pro'] leading-[14.40px] tracking-tight">
                         Privacy Policy
                       </div>
-                      <img src="./system.svg" alt="system" />
+                      <Image
+                        src="./system.svg"
+                        alt="system"
+                        width={12}
+                        height={12}
+                      />
                     </div>
                   </div>
                 </motion.div>
@@ -194,7 +237,7 @@ const EmailButtonWithPopover = () => {
         </motion.div>
       )}
       <div className="flex gap-1 cursor-pointer justify-end mr-[16px] mt-2">
-      <LuHelpCircle size="15" className="text-[#646d80]"/>
+        <LuHelpCircle size="15" className="text-[#646d80]" />
         <div className="text-[#646d80] text-xs font-normal font-['SF Pro'] leading-[14.40px] tracking-tight">
           Help & Support
         </div>

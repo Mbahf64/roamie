@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const countryData = [
   {
@@ -49,9 +50,11 @@ const CountryImageGrid = () => {
             key={country.id}
             className="relative overflow-hidden rounded-lg cursor-pointer"
           >
-            <img
+            <Image
               className="w-full h-auto object-cover"
               src={country.image}
+              width={32}
+              height={32}
             />
             <div className="absolute inset-0 flex flex-col items-start justify-center ml-8 w-[101.52px]">
               <p className="text-[#646d80] text-xl font-normal text-left">

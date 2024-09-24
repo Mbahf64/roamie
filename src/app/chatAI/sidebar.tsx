@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Profile from "./profile";
+import Image from "next/image";
+Image;
 
 const Sidebar = ({ isOpen, setIsOpen }) => {
   const [isLocked, setIsLocked] = useState(false);
@@ -55,15 +57,18 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
             onMouseLeave={() => setShowTooltip(false)}
           >
             <div className="pt-4 lg:pl-[14rem] 2xl:pl-[15.5rem] flex flex-col items-start gap-4">
-              <img
+              <Image
                 src="./Right.svg"
+                width={24}
+                height={24}
                 alt={isLocked ? "Unpin Sidebar" : "Pin Sidebar"}
                 className="hover:shadow-md hover:bg-gray-100 hover:rounded-md p-[0.9px]"
                 onClick={toggleLock}
                 style={{
                   cursor: "pointer",
                   display: "block",
-                  transition: "box-shadow 0.2s ease, background-color 0.2s ease",
+                  transition:
+                    "box-shadow 0.2s ease, background-color 0.2s ease",
                 }}
               />
 
@@ -78,9 +83,14 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
             </div>
           </div>
           <div className="ml-[18px] mt-[3rem] 2xl:mt-[8rem]">
-          <div className="flex flex-col gap-[3rem]">
-              <div className="w-[227px] 2xl:w-[242px] h-9 pl-2 py-2 bg-white rounded-lg justify-start items-center gap-2 inline-flex cursor-pointer">
-                <img src="./message-add.svg" alt="add" />
+            <div className="flex flex-col gap-[3rem]">
+              <div className="w-[227px] 2xl:w-[242px] h-9 pl-2 py-2 bg-white shadow-sm rounded-lg justify-start items-center gap-2 inline-flex cursor-pointer">
+                <Image
+                  src="./message-add.svg"
+                  alt="add"
+                  width={20}
+                  height={20}
+                />
                 <div className="w-[102px] h-4 text-[#292d32] text-sm font-normal leading-none">
                   Start new chat
                 </div>
@@ -90,14 +100,24 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
                   Starred
                 </div>
                 <div className="flex gap-2 cursor-pointer">
-                  <img src="./messages-.svg" alt="add" />
+                  <Image
+                    src="./messages-.svg"
+                    alt="add"
+                    width={16}
+                    height={16}
+                  />
                   <div className="w-[195px] h-4 text-[#292d32] text-sm font-normal leading-none">
                     What does the Visa Applica...
                   </div>
                 </div>
 
                 <div className="flex gap-2 cursor-pointer">
-                  <img src="./messages-.svg" alt="add" />
+                  <Image
+                    src="./messages-.svg"
+                    alt="add"
+                    width={16}
+                    height={16}
+                  />
                   <div className="w-[195px] h-4 text-[#292d32] text-sm font-normal leading-none">
                     What does the Visa Applica...
                   </div>
@@ -111,21 +131,36 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
                   Recents
                 </div>
                 <div className="flex gap-2 cursor-pointer">
-                  <img src="./messages-.svg" alt="add" />
+                  <Image
+                    src="./messages-.svg"
+                    alt="add"
+                    width={16}
+                    height={16}
+                  />
                   <div className="w-[195px] h-4 text-[#292d32] text-sm font-normal leading-none">
                     What does the Visa Applica...
                   </div>
                 </div>
 
                 <div className="flex gap-2 cursor-pointer">
-                  <img src="./messages-.svg" alt="add" />
+                  <Image
+                    src="./messages-.svg"
+                    alt="add"
+                    width={16}
+                    height={16}
+                  />
                   <div className="w-[195px] h-4 text-[#292d32] text-sm font-normal leading-none">
                     What does the Visa Applica...
                   </div>
                 </div>
 
                 <div className="flex gap-2 cursor-pointer">
-                  <img src="./messages-.svg" alt="add" />
+                  <Image
+                    src="./messages-.svg"
+                    alt="add"
+                    width={16}
+                    height={16}
+                  />
                   <div className="w-[195px] h-4 text-[#292d32] text-sm font-normal leading-none">
                     What does the Visa Applica...
                   </div>
@@ -135,12 +170,17 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
                   <p className="text-[#646d80] text-xs font-normal leading-[14.40px] tracking-tight">
                     View all
                   </p>
-                  <img src="./arrow-right.svg" alt="" />
+                  <Image
+                    src="./arrow-right.svg"
+                    alt=""
+                    width={16}
+                    height={16}
+                  />
                 </div>
               </div>
-            <Profile />
+              <Profile />
+            </div>
           </div>
-        </div>
         </div>
       </motion.div>
     </>

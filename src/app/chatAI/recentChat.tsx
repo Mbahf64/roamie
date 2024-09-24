@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import Alert from "./alert";
+import Image from "next/image";
 
 const suggestionsData = [
   {
@@ -70,11 +71,11 @@ const recentChat = () => {
     <div className="">
       <div className="w-[90vw] lg:w-[43vw] 2xl:w-[31vw] mt-[2rem] flex items-center justify-between mb-6">
         <div className="gap-3 flex items-center justify-between">
-          <img src="./messages.svg" alt="messages" />
+          <Image src="./messages.svg" alt="messages" width={16} height={16} />
           <p className="text-[#292d32] text-xs font-normal font-['SF Pro'] leading-[14.40px] tracking-tight">
             Your recent Chat
           </p>
-          <img
+          <Image
             src={isGridVisible ? "/arrow-down.svg" : "/arrow-up.svg"} // Ensure correct path
             alt="toggle"
             className="cursor-pointer"
@@ -82,6 +83,8 @@ const recentChat = () => {
               setIsGridVisible(!isGridVisible);
               console.log(isGridVisible); // Debugging
             }}
+            width={12}
+            height={12}
           />
         </div>
 
@@ -101,7 +104,12 @@ const recentChat = () => {
                   <div className="flex flex-col justify-start items-start gap-3.5 ">
                     <div className="flex items-center gap-3 lg:flex lg:flex-col lg:items-start">
                       <div className="w-4 h-4 flex justify-center items-center">
-                        <img src={item.icon} alt="icon" />
+                        <Image
+                          src={item.icon}
+                          alt="icon"
+                          width={16}
+                          height={16}
+                        />
                       </div>
                       <div className="text-[#292d32] text-sm font-normal font-['SF Pro'] leading-none">
                         {item.text}

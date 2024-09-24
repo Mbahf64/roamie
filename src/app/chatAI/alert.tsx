@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -87,12 +88,6 @@ const suggestionsData = [
   },
 ];
 
-//   const recentChat = () => {
-//     const [isGridVisible, setIsGridVisible] = useState(true);
-
-// const toggleGridVisibility = () => {
-//   setIsGridVisible(!isGridVisible);
-// };
 const alert = () => {
   return (
     <AlertDialog>
@@ -101,7 +96,7 @@ const alert = () => {
           <p className="text-[#646d80] text-xs font-normal font-['SF Pro'] leading-[14.40px] tracking-tight">
             View all
           </p>
-          <img src="./arrow-right.svg" alt="" />
+          <Image src="./arrow-right.svg" alt="" width={16} height={16} />
         </div>
       </AlertDialogTrigger>
       <AlertDialogContent>
@@ -116,7 +111,12 @@ const alert = () => {
                   <div className="flex flex-col justify-start items-start gap-3.5 ">
                     <div className="flex items-center gap-3 lg:flex lg:flex-col lg:items-start">
                       <div className="w-4 h-4 flex justify-center items-center">
-                        <img src={item.icon} alt="icon" />
+                        <Image
+                          src={item.icon}
+                          alt="icon"
+                          width={16}
+                          height={16}
+                        />
                       </div>
                       <div className="text-[#292d32] text-sm font-normal font-['SF Pro'] leading-none">
                         {item.text}
@@ -133,9 +133,9 @@ const alert = () => {
         </ScrollArea>
 
         <AlertDialogFooter>
-              <AlertDialogCancel>Cancel</AlertDialogCancel>
-              {/* <AlertDialogAction>Continue</AlertDialogAction> */}
-            </AlertDialogFooter>
+          <AlertDialogCancel>Cancel</AlertDialogCancel>
+          {/* <AlertDialogAction>Continue</AlertDialogAction> */}
+        </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>
   );

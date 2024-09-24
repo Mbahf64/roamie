@@ -2,12 +2,13 @@
 
 import React from "react";
 import Select from "./select"
+import Image from "next/image";
 
 const header = () => {
   return (
 
     <header className="flex justify-between items-center mx-[1.3em] lg:mx-[1em]  mt-9 ">
-      <img src="/roamie_logo.svg" alt="logo" className="fixed" />
+      <Image src="/roamie_logo.svg" alt="logo" className="fixed" />
 
       <div className="flex flex-row items-center justify-center fixed right-5 mt-4">
         <span className="text-[#646d80] text-[12px] font-normal pr-2 font-['SF Pro'] leading-[14px]">

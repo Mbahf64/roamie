@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function CountryImageGrid({ countries }) {
   return (
@@ -15,7 +16,8 @@ export default function CountryImageGrid({ countries }) {
        <div className="relative overflow-hidden rounded-lg cursor-pointer w">
          <img className="w-full h-auto object-cover" alt={country.name} src={country.image} />
          <div className="absolute inset-0 flex flex-col items-start justify-center ml-8">
-           <img className="w-8 h-8 object-cover" alt={country.name} src={country.flag} />
+           <Image className="object-cover"  width={32}
+          height={32} alt={country.name} src={country.flag} />
            <h3 className="text-[#292d32] text-2xl font-normal mb-1">{country.name}</h3>
            <p className="text-[#646d80] text-xs font-normal text-center">{country.text}</p>
          </div>

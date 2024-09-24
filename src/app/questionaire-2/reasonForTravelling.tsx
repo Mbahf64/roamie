@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
 
 const reason = [
@@ -28,10 +29,12 @@ const CountryImageGrid = () => {
           className="relative overflow-hidden rounded-lg cursor-pointer"
           onClick={handleNextClick}
         >
-          <img
+          <Image
             className="w-full h-auto object-cover"
             alt={country.name}
             src={country.image}
+           width={100}
+            height={100} 
           />
           <div className="absolute inset-0 flex flex-col items-start justify-center ml-6 ">
             <h3 className="text-[#292d32] text-2xl font-normal mb-1">
@@ -53,10 +56,3 @@ const CountryImageGrid = () => {
 
 export default CountryImageGrid;
 
-//   {/* Button to move to the next page */}
-//   <button
-//   className="bg-[#292d32] px-6 py-4 rounded-[18px] text-white text-xs font-normal"
-//   onClick={handleNextClick} // Navigate to Questionnaire 3
-// >
-//   Next
-// </button>
