@@ -22,7 +22,7 @@ const Country = () => {
           <SelectItem value="United kingdom">
             <Image
               className=" mr-1 inline"
-              src="/nigeria.png"
+              src="/Nigeria.png"
               width={12}
               height={12}
               alt=""
@@ -33,7 +33,7 @@ const Country = () => {
           <SelectItem value="japan">
             <Image
               className=" mr-1 inline"
-              src="/nigeria.png"
+              src="/Nigeria.png"
               width={12}
               height={12}
               alt=""
@@ -44,7 +44,7 @@ const Country = () => {
           <SelectItem value="nigeria">
             <Image
               className=" mr-1 inline"
-              src="/nigeria.png"
+               src="/Nigeria.png"
               width={12}
               height={12}
               alt=""
@@ -55,7 +55,7 @@ const Country = () => {
           <SelectItem value="usa">
             <Image
               className=" mr-1 inline"
-              src="/nigeria.png"
+              src="/Nigeria.png"
               width={12}
               height={12}
               alt=""
@@ -66,7 +66,7 @@ const Country = () => {
           <SelectItem value="ghana">
             <Image
               className=" mr-1 inline"
-              src="/nigeria.png"
+             src="/Nigeria.png"
               width={12}
               height={12}
               alt=""
@@ -77,7 +77,7 @@ const Country = () => {
           <SelectItem value="spain">
             <Image
               className=" mr-1 inline"
-              src="/nigeria.png"
+              src="/Nigeria.png"
               width={12}
               height={12}
               alt=""
