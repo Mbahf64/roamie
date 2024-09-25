@@ -59,14 +59,14 @@
   }
 }
 
-@layer base {
+/* @layer base {
   * {
     @apply border-border;
   }
   body {
     @apply bg-background text-foreground;
   }
-}
+} */
 
 
 body{
@@ -92,7 +92,7 @@ body{
   width: 100%;
   height: 46px;
   border-radius: 1.5rem; 
-  padding-left: 16px;
+  padding-left: 19px;
   padding-right: 140px;
   outline: none;
   border-color: #D6DADE;
@@ -144,7 +144,7 @@ body{
 .destination-input {
   min-width: 332px; /* Maximum width */
   height: 52px;
-  padding-left: 44px; /* Space for search icon */
+  padding-left: 38px; /* Space for search icon */
   padding-right: 16px;
   padding-top: 16px;
   padding-bottom: 16px;

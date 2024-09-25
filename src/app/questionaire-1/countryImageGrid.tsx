@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 interface Country {
   id: number;
@@ -16,7 +17,7 @@ interface CountryImageGridProps {
 
 export default function CountryImageGrid({ countries }: CountryImageGridProps) {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-3">
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10">
       {countries.map((country) => (
         <Link
           key={country.id}
@@ -25,7 +26,7 @@ export default function CountryImageGrid({ countries }: CountryImageGridProps) {
             query: { country: country.name, text: country.text },
           }}
         >
-          <div className="relative overflow-hidden rounded-lg cursor-pointer">
+          <div className="relative overflow-hidden rounded-lg cursor-pointer mt-">
             <Image
               className="w-full h-auto object-cover"
               alt={country.name}

@@ -36,6 +36,34 @@ const countryData = [
     text: "FRANCE",
     image: "/Ellipse.svg",
   },
+  {
+    id: 5,
+    name: "Paris",
+    flag: "/italy.svg",
+    text: "FRANCE",
+    image: "/Ellipse.svg",
+  },
+  {
+    id: 6,
+    name: "Paris",
+    flag: "/italy.svg",
+    text: "FRANCE",
+    image: "/Ellipse.svg",
+  },
+  {
+    id: 7,
+    name: "Paris",
+    flag: "/italy.svg",
+    text: "FRANCE",
+    image: "/Ellipse.svg",
+  },
+  {
+    id: 8,
+    name: "Paris",
+    flag: "/italy.svg",
+    text: "FRANCE",
+    image: "/Ellipse.svg",
+  },
 ];
 
 export default function Page() {  // Changed 'page' to 'Page'
