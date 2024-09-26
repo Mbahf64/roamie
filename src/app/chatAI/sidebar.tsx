@@ -46,7 +46,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, setIsOpen }) => {
         animate={{ x: isOpen || isLocked ? "0" : "-100%" }}
         transition={{ type: "spring", stiffness: 100, damping: 20 }}
         onMouseLeave={handleMouseLeave}
-        className={`w-0 lg:w-[19vw] 2xl:w-[15vw] bg-transparent border border-[#e5eaf0] h-full shadow-sm fixed top-0 left-0 z-10 hidden lg:flex flex-col items-start ${
+        className={`w-0 lg:w-[21vw] 2xl:w-[15vw] bg-transparent border border-[#e5eaf0] h-full shadow-sm fixed top-0 left-0 z-10 hidden lg:flex flex-col items-start ${
           isLocked ? "" : "rounded-2xl"
         }`}
         style={{
@@ -61,7 +61,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, setIsOpen }) => {
             onMouseEnter={() => setShowTooltip(true)}
             onMouseLeave={() => setShowTooltip(false)}
           >
-            <div className="pt-4 lg:pl-[14rem] 2xl:pl-[15.5rem] flex flex-col items-start gap-4">
+            <div className="pt-4 lg:pl-[18vw] 2xl:pl-[13vw] flex flex-col items-start gap-4">
               <Image
                 src="./Right.svg"
                 width={24}
@@ -89,7 +89,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, setIsOpen }) => {
           </div>
           <div className="ml-[18px] mt-[3rem] 2xl:mt-[8rem]">
             <div className="flex flex-col gap-[3rem]">
-              <div className="w-[227px] 2xl:w-[242px] h-9 pl-2 py-2 bg-white shadow-sm rounded-lg justify-start items-center gap-2 inline-flex cursor-pointer">
+              <div className="w-[18vw] 2xl:w-[13vw] h-9 pl-2 py-2 bg-white shadow-sm rounded-lg justify-start items-center gap-2 inline-flex cursor-pointer">
                 <Image
                   src="./message-add.svg"
                   alt="add"
@@ -130,7 +130,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, setIsOpen }) => {
               </div>
             </div>
 
-            <div className="flex flex-col mt-10 gap-[150px] 2xl:gap-[370px]">
+            <div className="flex flex-col mt-10 gap-[32vh] 2xl:gap-[370px]">
               <div className="flex flex-col gap-3">
                 <div className="text-[#292d32] text-[13px] font-semibold leading-[14.40px] tracking-tight">
                   Recents

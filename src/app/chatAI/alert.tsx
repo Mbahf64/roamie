@@ -46,42 +46,8 @@ const suggestionsData = [
     text: "How to save money while traveling?",
     time: "3 days ago",
   },
-  {
-    id: 7,
-    icon: "./messages-.svg",
-    text: "How to save money while traveling?",
-    time: "3 days ago",
-  },
-  {
-    id: 8,
-    icon: "./messages-.svg",
-    text: "How to save money while traveling?",
-    time: "3 days ago",
-  },
-  {
-    id: 9,
-    icon: "./messages-.svg",
-    text: "How to save money while traveling?",
-    time: "3 days ago",
-  },
-  {
-    id: 9,
-    icon: "./messages-.svg",
-    text: "How to save money while traveling?",
-    time: "3 days ago",
-  },
-  {
-    id: 9,
-    icon: "./messages-.svg",
-    text: "How to save money while traveling?",
-    time: "3 days ago",
-  },
-  {
-    id: 9,
-    icon: "./messages-.svg",
-    text: "How to save money while traveling?",
-    time: "3 days ago",
-  },
+ 
+ 
 ];
 
 const alert = () => {
@@ -98,11 +64,11 @@ const alert = () => {
       <AlertDialogContent>
         <ScrollArea className="w-[90vw] lg:w-[43vw] 2xl:w-[31vw] lg:h-full">
           <div className="w-[90vw] lg:w-[43vw] 2xl:w-[31vw] ">
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
               {suggestionsData.map((item) => (
                 <div
                   key={item.id}
-                  className="w-[43vw] h-[82px] lg:w-[184.8px] 2xl:w-[190px] lg:h-[130px] cursor-pointer p-4 bg-[#f6faff] rounded-2xl border border-[#e5eaf0] justify-start items-center inline-flex"
+                  className="w-[90vw] h-[82px] lg:w-[184.8px] 2xl:w-[190px] lg:h-[130px] cursor-pointer p-4 bg-[#f6faff] rounded-2xl border border-[#e5eaf0] justify-start items-center inline-flex"
                 >
                   <div className="flex flex-col justify-start items-start gap-3.5 ">
                     <div className="flex items-center gap-3 lg:flex lg:flex-col lg:items-start">

@@ -4,7 +4,7 @@ import React from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Timespan from "../questionaire-4/validity";
-import Select from "../select"
+import Select from "../select";
 
 export default function Home() {
   const router = useRouter();
@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <main className="sf-pro">
       <header className="flex justify-between items-center mx-[1.3em] lg:mx-[1em]  mt-9 ">
-      <Image
+        <Image
           src="/roamie_logo.svg"
           width={82}
           height={34}
@@ -23,9 +23,9 @@ export default function Home() {
           className="fixed"
         />
 
-        <div className="flex flex-row items-center justify-center fixed right-5 mt-4">
+<div className="hidden flex-row items-center justify-center fixed right-5 mt-4">
           <span className="text-[#646d80] text-[12px] font-normal pr-2 font-['SF Pro'] leading-[14px]">
-            You’re from
+            You&#39;re from  {/* Escaped apostrophe */}
           </span>
           <Select />
         </div>
@@ -44,7 +44,7 @@ export default function Home() {
           className="bg-[#292d32] px-6 py-4 rounded-[18px] text-white text-xs font-normal flex gap-1 md:hidden"
           onClick={handleBackClick}
         >
-            <Image
+          <Image
             className="image"
             alt=""
             src="/arrow_back.svg"

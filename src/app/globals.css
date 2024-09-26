@@ -142,7 +142,7 @@ body{
 
 /* Input field styles */
 .destination-input {
-  min-width: 332px; /* Maximum width */
+  min-width: 50vh; /* Maximum width */
   height: 52px;
   padding-left: 38px; /* Space for search icon */
   padding-right: 16px;

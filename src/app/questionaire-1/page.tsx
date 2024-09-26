@@ -36,34 +36,7 @@ const countryData = [
     text: "FRANCE",
     image: "/Ellipse.svg",
   },
-  {
-    id: 5,
-    name: "Paris",
-    flag: "/Italy.svg",
-    text: "FRANCE",
-    image: "/Ellipse.svg",
-  },
-  {
-    id: 6,
-    name: "Paris",
-    flag: "/Italy.svg",
-    text: "FRANCE",
-    image: "/Ellipse.svg",
-  },
-  {
-    id: 7,
-    name: "Paris",
-    flag: "/Italy.svg",
-    text: "FRANCE",
-    image: "/Ellipse.svg",
-  },
-  {
-    id: 8,
-    name: "Paris",
-    flag: "/Italy.svg",
-    text: "FRANCE",
-    image: "/Ellipse.svg",
-  },
+ 
 ];
 
 export default function Page() {  // Changed 'page' to 'Page'
@@ -96,7 +69,7 @@ export default function Page() {  // Changed 'page' to 'Page'
           className="fixed"
         />
 
-        <div className="flex flex-row items-center justify-center fixed right-5 mt-4">
+        <div className="hidden flex-row items-center justify-center fixed right-5 mt-4">
           <span className="text-[#646d80] text-[12px] font-normal pr-2 font-['SF Pro'] leading-[14px]">
             You&#39;re from  {/* Escaped apostrophe */}
           </span>
@@ -126,8 +99,8 @@ export default function Page() {  // Changed 'page' to 'Page'
           <p className="text-[#292d32] text-base lg:text-[40px] font-['SF Pro'] mb-4">
             Hey, Micheal!
           </p>
-          <p className="w-full text-[#646d80] text-[30px] lg:text-base font-normal font-['SF Pro'] leading-tight">
-            What City are you planning to visit?
+          <p className="w-full text-[#646d80] text-[7vw] lg:text-base font-normal font-['SF Pro'] leading-tight">
+          What city are you visiting?
           </p>
         </div>
 

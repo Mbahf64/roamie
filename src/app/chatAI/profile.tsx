@@ -42,11 +42,11 @@ const EmailButtonWithPopover = () => {
     <div className="relative">
       {/* Main Button */}
       <div
-        className="w-[227px] 2xl:w-[242px] h-12 pl-2 pr-4 py-2 bg-[#f6faff] rounded-lg border border-[#dadfe4] justify-start items-center gap-2 inline-flex cursor-pointer"
+        className="w-[18vw] 2xl:w-[13vw] h-12 pl-2 pr-4 py-2 bg-[#f6faff] rounded-lg border border-[#dadfe4] justify-start items-center gap-2 inline-flex cursor-pointer"
         onClick={togglePopover}
       >
         <Image src="./profile.svg" alt="profile" width={32} height={32} />
-        <div className="flex items-center gap-5 2xl:gap-5.5 ">
+        <div className="flex items-center gap-3 2xl:gap-6 ">
           <div className="h-4 text-[#292d32] text-[12px] font-normal leading-none">
             mbabright2105@gmail.com
           </div>
@@ -70,7 +70,7 @@ const EmailButtonWithPopover = () => {
           animate={{ opacity: 1, y: 0 }} // Animate to full visibility and move up
           exit={{ opacity: 0, y: 20 }} // Animate out back down
           transition={{ duration: 0.3, ease: "easeInOut" }} // Smooth animation
-          className="absolute bottom-full left-0 mb-2 w-[227px] 2xl:w-[242px] h-[330px] bg-white p-4 rounded-2xl shadow border border-[#e5eaf0]"
+          className="absolute bottom-full left-0 mb-2 w-[18vw] 2xl:w-[13vw] h-[330px] bg-white p-4 rounded-2xl shadow border border-[#e5eaf0]"
           style={{ zIndex: 10 }}
         >
           <div className="flex flex-col gap-4">
@@ -236,7 +236,7 @@ const EmailButtonWithPopover = () => {
           </div>
         </motion.div>
       )}
-      <div className="flex gap-1 cursor-pointer justify-end mr-[16px] mt-2">
+      <div className="w-[18vw] 2xl:w-[13vw] flex gap-1 cursor-pointer justify-end  mt-2">
         <LuHelpCircle size="15" className="text-[#646d80]" />
         <div className="text-[#646d80] text-xs font-normal font-['SF Pro'] leading-[14.40px] tracking-tight">
           Help & Support

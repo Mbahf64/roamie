@@ -26,9 +26,9 @@ function QuestionaireContent() {
           alt="logo"
           className="fixed"
         />
-        <div className="flex flex-row items-center justify-center fixed right-5 mt-4">
+      <div className="hidden flex-row items-center justify-center fixed right-5 mt-4">
           <span className="text-[#646d80] text-[12px] font-normal pr-2 font-['SF Pro'] leading-[14px]">
-            You’re from
+            You&#39;re from  {/* Escaped apostrophe */}
           </span>
           <Select />
         </div>
@@ -42,7 +42,7 @@ function QuestionaireContent() {
         />
       </div>
 
-      <div className="absolute top-0 w-full h-screen flex items-center justify-center flex-col gap-6">
+      <div className="absolute top-0 w-full h-screen flex items-center justify-center flex-col gap-6 mt-5">
         <button
           className="bg-[#292d32] px-6 py-4 rounded-[18px] text-white text-xs font-normal flex gap-1 md:hidden"
           onClick={handleBackClick}

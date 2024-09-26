@@ -21,6 +21,7 @@ const CountryImageGrid = () => {
     router.push(`/questionaire-3?country=${country}&text=${text}`);
   };
   return (
+
     <div className="grid grid-cols-2 md:grid-cols-3 gap-4 ">
       {reason.map((country) => (
         <div
@@ -50,6 +51,7 @@ const CountryImageGrid = () => {
 
 
     </div>
+
   );
 };
 

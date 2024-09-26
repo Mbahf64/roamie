@@ -18,16 +18,16 @@ export default function Home() {
 
   return (
     <main className="sf-pro">
-      <header className="flex justify-between items-center mx-[1.3em] lg:mx-[1em]  mt-9 ">
+      <header className="flex justify-between items-center mx-[1.3em] lg:mx-[1em]  mt-6 ">
       <Image
           src="/roamie_logo.svg"
           width={82}
           height={34}
           alt="logo"
-          className="fixed"
+          className="lg:fixed"
         />
 
-        <div className="flex flex-row items-center justify-center fixed right-5 mt-4">
+        <div className="flex flex-row items-center justify-center lg:fixed right-5 mt-4">
           <span className="text-[#646d80] text-[12px] font-normal pr-2 font-['SF Pro'] leading-[14px]">
             You’re from
           </span>
@@ -51,7 +51,7 @@ export default function Home() {
       {/* Conditionally render BottomIcon when sidebar is closed */}
       {!isSidebarOpen && <BottomIcon />}
 
-      <div className="flex flex-col items-center justify-center max-w-full h-full mt-[4rem] 2xl:mt-[8em]">
+      <div className="flex flex-col items-center justify-center max-w-full h-full mt-[2rem] 2xl:mt-[8em]">
         <div className="w-[90vw] md:w-[650px] md:h-[95px] h-[159px] px-4 py-8 bg-white/30 rounded-lg shadow flex-col justify-center items-center flex">
           <div className="grid grid-cols-2 gap-2 md:grid-cols-4">
             <div className="">

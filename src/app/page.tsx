@@ -37,7 +37,7 @@ export default function page() {
         />
       </div>
 
-      <div className="max-h-[926px] flex flex-col items-center m-auto justify-center gap-[18em] lg:gap-[18vh] 2xl:gap-[27vh] mx-[1.5em] mt-[10em] lg:mt-[8vh] 2xl:mt-[20vh]">
+      <div className="max-h-[926px] flex flex-col items-center m-auto justify-center gap-[28vh] lg:gap-[29vh] 2xl:gap-[27vh] mx-[1.5em] mt-[1vh] lg:mt-[8vh] 2xl:mt-[20vh]">
         <div className="flex flex-col items-center justify-center gap-4 mt-[6em] lg:mt-[7em]">
           <Shineborder />
           <h1 className="w-[323px] md:w-full text-center text-[#292d32] text-[32px] font-normal font-sf-pro md:text-5xl leading-10">
