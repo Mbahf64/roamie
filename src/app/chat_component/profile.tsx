@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { LuHelpCircle } from "react-icons/lu";
 import Image from "next/image";
+import Link from 'next/link'
 
 const EmailButtonWithPopover = () => {
   const [isPopoverVisible, setPopoverVisible] = useState(false);
@@ -42,11 +43,11 @@ const EmailButtonWithPopover = () => {
     <div className="relative">
       {/* Main Button */}
       <div
-        className="w-[18vw] 2xl:w-[13vw] h-12 pl-2 pr-4 py-2 bg-[#f6faff] rounded-lg border border-[#dadfe4] justify-start items-center gap-2 inline-flex cursor-pointer"
+        className="w-full h-12 pl-2 pr-4 py-2 bg-[#f6faff] rounded-lg border border-[#dadfe4] justify-start items-center gap-2 inline-flex cursor-pointer"
         onClick={togglePopover}
       >
-        <Image src="./profile.svg" alt="profile" width={32} height={32} />
-        <div className="flex items-center gap-3 2xl:gap-6 ">
+        <Image src="./user-bg.svg" alt="profile" width={32} height={32} />
+        <div className="flex items-center w-full justify-between">
           <div className="h-4 text-[#292d32] text-[12px] font-normal leading-none">
             mbabright2105@gmail.com
           </div>
@@ -70,7 +71,7 @@ const EmailButtonWithPopover = () => {
           animate={{ opacity: 1, y: 0 }} // Animate to full visibility and move up
           exit={{ opacity: 0, y: 20 }} // Animate out back down
           transition={{ duration: 0.3, ease: "easeInOut" }} // Smooth animation
-          className="absolute bottom-full left-0 mb-2 w-[18vw] 2xl:w-[13vw] h-[330px] bg-white p-4 rounded-2xl shadow border border-[#e5eaf0]"
+          className="absolute bottom-full left-0 mb-2 w-full h-[330px] bg-white p-4 rounded-2xl shadow border border-[#e5eaf0]"
           style={{ zIndex: 10 }}
         >
           <div className="flex flex-col gap-4">
@@ -97,13 +98,15 @@ const EmailButtonWithPopover = () => {
                 </div>
               </div>
             </div>
-            <div className="text-[#646d80] text-sm font-normal font-['SF Pro'] leading-none cursor-pointer">
+
+            <Link className="text-[#646d80] text-sm font-normal font-['SF Pro'] leading-none cursor-pointer" href="/settings">
               Settings
-            </div>
+            </Link>
+
             {/* Appearance Section */}
             <div className="relative">
               <div
-                className="flex gap-24 2xl:gap-[120px] cursor-pointer"
+                className="flex w-full justify-between cursor-pointer"
                 onClick={toggleAppearancePopover}
               >
                 <div className="text-[#646d80] text-sm font-normal font-['SF Pro'] leading-none">
@@ -163,7 +166,7 @@ const EmailButtonWithPopover = () => {
             {/* Learn More Section */}
             <div className="relative">
               <div
-                className="flex gap-24 2xl:gap-[120px] cursor-pointer"
+                 className="flex w-full justify-between cursor-pointer"
                 onClick={toggleLearnMorePopover}
               >
                 <div className="text-[#646d80] text-sm font-normal font-['SF Pro'] leading-none">
@@ -236,7 +239,7 @@ const EmailButtonWithPopover = () => {
           </div>
         </motion.div>
       )}
-      <div className="w-[18vw] 2xl:w-[13vw] flex gap-1 cursor-pointer justify-end  mt-2">
+      <div className="w-full flex gap-1 cursor-pointer justify-end  mt-2">
         <LuHelpCircle size="15" className="text-[#646d80]" />
         <div className="text-[#646d80] text-xs font-normal font-['SF Pro'] leading-[14.40px] tracking-tight">
           Help & Support
