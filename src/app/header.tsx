@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import Select from "./select"
+import Select from "./settings/select"
 import Image from "next/image";
 
 const header = () => {

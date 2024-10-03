@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import Profile from "./profile";
+import Profile from "../chat_component/profile"
 import Image from "next/image";
 import { XMarkIcon } from "@heroicons/react/24/solid";
-import Link from "next/link";
+import Link from 'next/link'
 
 interface SidebarProps {
   isOpen: boolean;
@@ -30,8 +30,6 @@ const Sidebar: React.FC<SidebarProps> = ({
   const toggleLock = () => {
     setIsLocked((prevLocked) => !prevLocked); // Toggle locking the sidebar
   };
-
-
 
   return (
     <>
@@ -123,14 +121,7 @@ const Sidebar: React.FC<SidebarProps> = ({
           </div>
           <div className="h-screen ml-[18px] mt-[4rem] 2xl:mt-[6rem]">
             <div className="flex flex-col gap-[3rem]">
-              <Link
-                href="/"
-                onClick={(e) => {
-                  e.preventDefault();
-                  window.location.href = "/";
-                }}
-                className=" h-9 justify-start items-center gap-2 inline-flex cursor-pointer"
-              >
+              <Link className=" h-9 justify-start items-center gap-2 inline-flex cursor-pointer" href="/h">
                 <Image
                   src="./message-add.svg"
                   alt="add"
@@ -246,4 +237,3 @@ const Sidebar: React.FC<SidebarProps> = ({
 };
 
 export default Sidebar;
-

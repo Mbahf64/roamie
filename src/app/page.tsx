@@ -6,6 +6,8 @@ import Sidebar from "./chat_component/sidebar";
 import BottomIcon from "./chat_component/bottomIcon";
 import TextArea from "./chat_component/textArea";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import OpenAI from "openai"; // Updated import for OpenAI
+
 
 interface Message {
   type: "user" | "bot"; // Define whether it's a user or bot message
@@ -17,6 +19,9 @@ export default function Home() {
   const [isLargeScreen, setIsLargeScreen] = useState(false);
   const [hideTopContent, setHideTopContent] = useState(false); // Add this state to control visibility
   const [messages, setMessages] = useState<Message[]>([]); // Store the conversation
+  const openAi = new OpenAI({
+    apiKey: process.env.OPENAI_API_KEY, // Initialize OpenAI with the API key
+  });
 
   // Detect screen size to enable hover for large screens
   useEffect(() => {
@@ -29,7 +34,7 @@ export default function Home() {
   }, []);
 
   // Function to handle sending a message
-  const handleSendMessage = (text: string) => {
+  const handleSendMessage = async (text: string) => {
     if (text.trim()) {
       // Add the user's message to the conversation
       setMessages((prevMessages) => [
@@ -37,19 +42,29 @@ export default function Home() {
         { type: "user", content: text },
       ]);
       setHideTopContent(true); // Hide the top content after the first message is sent
-
-      // Simulate a bot response after a delay
-      setTimeout(() => {
-        const botResponse =
-          "Roamie AI: I'm here to assist you with your travel plans! Roamie AI: I'm here to assist you with your travel plans!  Roamie AI: I'm here to assist you with your travel plans! Roamie AI: I'm here to assist you with your travel plans!";
+  
+      try {
+        const response = await openAi.chat.completions.create({
+          model: "gpt-3.5-turbo",
+          messages: [{ role: "user", content: text }],
+        });
+        const botResponse = response.choices[0].message.content ?? ""; // Ensure botResponse is not null
+  
+        // Add the bot's response to the conversation
         setMessages((prevMessages) => [
           ...prevMessages,
-          { type: "bot", content: botResponse },
+          { type: "bot", content: botResponse }, // Always passing a string
         ]);
-      }, 1000); // Delay for 1 second
+      } catch (error) {
+        console.error("Error fetching OpenAI response:", error);
+        setMessages((prevMessages) => [
+          ...prevMessages,
+          { type: "bot", content: "Sorry, I couldn't fetch a response." }, // Fallback error message
+        ]);
+      }
     }
   };
-
+  
   const UserMessage = ({ content }: { content: string }) => {
     return (
       <div className="flex justify-start w-full mb-8 font-galano">
@@ -150,7 +165,7 @@ export default function Home() {
             </div>
           )}
 
-          <ScrollArea className="max-h-[50vh] 2xl:max-h-[63vh]" ref={scrollRef}>
+          <ScrollArea className="max-h-[55vh] 2xl:max-h-[63vh]" ref={scrollRef}>
             <div className="w-[93vw] lg:w-[836px] flex flex-col items-center pt-[1px]">
               {/* Chat Bubbles */}
               <div className="w-full">
@@ -183,45 +198,34 @@ export default function Home() {
                     width={16}
                     height={16}
                   />
-                  <div className="text-center text-[#292d32] text-sm font-normal font-galano">
-                    Give us some context
+                  <div className="text-center text-[#646d80] text-sm font-galano">
+                    Attach
                   </div>
                 </div>
-
-                <div className="hidden lg:flex items-center justify-center gap-2">
+                <div className="flex items-center justify-center gap-2">
                   <Image
                     className="inline"
-                    src="./find.svg"
-                    alt="find"
+                    src="./camera.svg"
+                    alt="camera"
                     width={16}
                     height={16}
                   />
-                  <div className="text-center text-[#292d32] text-sm font-normal font-galano">
-                    I’m not sure what to ask
+                  <div className="text-center text-[#646d80] text-sm font-galano">
+                    Image
                   </div>
                 </div>
               </div>
-              <div className="text-[#292d32] text-sm font-normal  leading-tight font-galano">
-                20 / 1000
-              </div>
+              <BottomIcon />
             </div>
           </div>
-
-          {/* This message stays visible */}
-          <div className="w-[93vw] text-center text-[#646d80]  text-sm lg:text-base mt-7 font-galano">
-            Any question not about traveling to a new country might be
-            inaccurate. Model: Roamie AI v1.1
-          </div>
         </div>
+
         <Sidebar
           isOpen={isSidebarOpen}
           setIsOpen={setIsSidebarOpen}
           isLargeScreen={isLargeScreen} // Pass screen size
         />
       </div>
-
-      {/* Show BottomIcon only when sidebar is closed */}
-      {!isSidebarOpen && <BottomIcon />}
     </main>
   );
 }

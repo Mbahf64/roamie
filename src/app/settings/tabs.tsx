@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import Select from "./select"
 
 type TabType = "general" | "account";
 
@@ -10,7 +11,7 @@ interface FormData {
   password: string;
 }
 
-const SideTabbedForm: React.FC = () => {
+const Tabs: React.FC = () => {
   const [activeTab, setActiveTab] = useState<TabType>("general");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [formData, setFormData] = useState<FormData>({
@@ -173,16 +174,12 @@ const SideTabbedForm: React.FC = () => {
                 >
                   Nationality
                 </label>
-                <input
-                  type="text"
-                  id="title"
-                  name="title"
-                  value={formData.whatDoYouDo}
-                  onChange={handleInputChange}
-                  className="w-full h-12 px-4 py-3 bg-white rounded-lg border border-[#e5eaf0] text-[#292d32] text-sm font-normal font-Galano leading-none"
-                  placeholder="Nigerian"
-                />
+                <Select />
               </div>
+
+
+
+
               <div className="mb-4">
                 <label
                   htmlFor="emailaddress"
@@ -190,15 +187,7 @@ const SideTabbedForm: React.FC = () => {
                 >
                   Residence
                 </label>
-                <input
-                  type="text"
-                  id="email"
-                  name="email"
-                  value={formData.whatDoYouDo}
-                  onChange={handleInputChange}
-                  className="w-full h-12 px-4 py-3 bg-white rounded-lg border border-[#e5eaf0] text-[#292d32] text-sm font-normal font-Galano leading-none"
-                  placeholder="Nigerian"
-                />
+                   <Select />
               </div>
             </>
           )}
@@ -218,4 +207,4 @@ const SideTabbedForm: React.FC = () => {
   );
 };
 
-export default SideTabbedForm;
+export default Tabs;
