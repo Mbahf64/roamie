@@ -19,9 +19,9 @@ export default function Home() {
   const [isLargeScreen, setIsLargeScreen] = useState(false);
   const [hideTopContent, setHideTopContent] = useState(false); // Add this state to control visibility
   const [messages, setMessages] = useState<Message[]>([]); // Store the conversation
-  const openAi = new OpenAI({
-    apiKey: process.env.OPENAI_API_KEY, // Initialize OpenAI with the API key
-  });
+  // const openAi = new OpenAI({
+  //   Initialize OpenAI with the API key
+  // });
 
   // Detect screen size to enable hover for large screens
   useEffect(() => {
