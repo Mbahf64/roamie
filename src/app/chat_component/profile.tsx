@@ -46,7 +46,7 @@ const EmailButtonWithPopover = () => {
         className="w-full h-12 pl-2 pr-4 py-2 bg-[#f6faff] rounded-lg border border-[#dadfe4] justify-start items-center gap-2 inline-flex cursor-pointer"
         onClick={togglePopover}
       >
-        <Image src="./user-bg.svg" alt="profile" width={32} height={32} />
+        <Image src="./avatar2.svg" alt="profile" width={32} height={32} />
         <div className="flex items-center w-full justify-between">
           <div className="h-4 text-[#292d32] text-[12px] font-normal leading-none">
             mbabright2105@gmail.com
@@ -71,7 +71,7 @@ const EmailButtonWithPopover = () => {
           animate={{ opacity: 1, y: 0 }} // Animate to full visibility and move up
           exit={{ opacity: 0, y: 20 }} // Animate out back down
           transition={{ duration: 0.3, ease: "easeInOut" }} // Smooth animation
-          className="absolute bottom-full left-0 mb-2 w-full h-[330px] bg-white p-4 rounded-2xl shadow border border-[#e5eaf0]"
+          className="absolute bottom-full left-0 mb-2 w-full h-[325px] bg-white p-4 rounded-2xl shadow border border-[#e5eaf0]"
           style={{ zIndex: 10 }}
         >
           <div className="flex flex-col gap-4">
@@ -81,14 +81,14 @@ const EmailButtonWithPopover = () => {
               </div>
               <div className="flex gap-2 items-center justify-start">
                 <Image
-                  src="./profile.svg"
+                  src="./avatar2.svg"
                   alt="profile"
                   width={32}
                   height={32}
                 />
-                <div>
+                <div className="h-[32px] flex flex-col items-center justify-between">
                   <div className="text-[#292d32] text-sm font-normal font-['SF Pro'] leading-none cursor-pointer">
-                    Micheal
+                    Bright
                   </div>
                   <div className="h-[13px] px-1 py-px rounded-sm border border-[#e5eaf0] justify-center items-center gap-2 inline-flex cursor-pointer">
                     <div className="text-[#646d80] text-[9px] font-normal font-['SF Pro'] leading-[11.20px] tracking-tight">

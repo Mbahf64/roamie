@@ -28,27 +28,48 @@ export default function Home() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Function to handle sending a message
-  const handleSendMessage = (text: string) => {
+
+  const handleSendMessage = async (text: string) => {
     if (text.trim()) {
       // Add the user's message to the conversation
       setMessages((prevMessages) => [
         ...prevMessages,
-        { type: "user", content: text },
+        { type: 'user', content: text },
       ]);
-      setHideTopContent(true); // Hide the top content after the first message is sent
+      setHideTopContent(true); // Hide top content after the first message is sent
 
-      // Simulate a bot response after a delay
-      setTimeout(() => {
-        const botResponse =
-          "Roamie AI: I'm here to assist you with your travel plans! Roamie AI: I'm here to assist you with your travel plans!  Roamie AI: I'm here to assist you with your travel plans! Roamie AI: I'm here to assist you with your travel plans!";
+      try {
+        const response = await fetch('/api/gemini', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ prompt: text }), // Send the user's prompt
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+          // Add the bot's response to the conversation
+          setMessages((prevMessages) => [
+            ...prevMessages,
+            { type: 'bot', content: data.message },
+          ]);
+        } else {
+          throw new Error(data.error || 'Failed to get a response');
+        }
+      } catch (error) {
+        console.error('Error fetching Gemini response:', error);
         setMessages((prevMessages) => [
           ...prevMessages,
-          { type: "bot", content: botResponse },
+          { type: 'bot', content: "Sorry, I couldn't fetch a response." }, // Fallback error message
         ]);
-      }, 1000); // Delay for 1 second
+      }
     }
   };
+  
+  
+
 
   const UserMessage = ({ content }: { content: string }) => {
     return (
@@ -131,11 +152,12 @@ export default function Home() {
       </header>
 
       <div className="flex items-center justify-end h-full">
-        <div
-          className={`flex flex-col items-center justify-end w-full h-full mb-[4rem] transition-transform duration-300 ease-in-out ${
-            isSidebarOpen ? "lg:mr-[-150px]" : "ml-0"
-          }`}
-        >
+      <div
+  className={`flex flex-col items-center justify-end w-full h-full mb-[4rem] transition-transform duration-500 ease-in-out transform ${
+    isSidebarOpen ? "lg:ml-[200px]" : "lg:translate-x-0"
+  }`}
+>
+
           {/* Conditionally render top content */}
           {!hideTopContent && (
             <div className="flex flex-col items-center gap-5">
@@ -150,7 +172,7 @@ export default function Home() {
             </div>
           )}
 
-          <ScrollArea className="max-h-[55vh] 2xl:max-h-[63vh]" ref={scrollRef}>
+          <ScrollArea className="max-h-[55vh] lg:max-h-[50vh] 2xl:max-h-[63vh]" ref={scrollRef}>
             <div className="w-[93vw] lg:w-[836px] flex flex-col items-center pt-[1px]">
               {/* Chat Bubbles */}
               <div className="w-full">

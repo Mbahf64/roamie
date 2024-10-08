@@ -223,5 +223,73 @@
 //       {/* Show BottomIcon only when sidebar is closed */}
 //       {!isSidebarOpen && <BottomIcon />}
 //     </main>
-//   );
+//   );  
 // }
+
+
+// const handleSendMessage = (text: string) => {
+//   if (text.trim()) {
+//     // Add the user's message to the conversation
+//     setMessages((prevMessages) => [
+//       ...prevMessages,
+//       { type: "user", content: text },
+//     ]);
+//     setHideTopContent(true); // Hide the top content after the first message is sent
+
+//     // Simulate a bot response after a delay
+//     setTimeout(() => {
+//       const botResponse =
+//         "Roamie AI: I'm here to assist you with your travel plans! Roamie AI: I'm here to assist you with your travel plans!  Roamie AI: I'm here to assist you with your travel plans! Roamie AI: I'm here to assist you with your travel plans!";
+//       setMessages((prevMessages) => [
+//         ...prevMessages,
+//         { type: "bot", content: botResponse },
+//       ]);
+//     }, 1000); // Delay for 1 second
+//   }
+// };
+
+
+
+
+// CHATGPT
+
+
+//   // Function to handle sending a message
+//   const handleSendMessage = async (text: string) => {
+//     if (text.trim()) {
+//       // Add the user's message to the conversation
+//       setMessages((prevMessages) => [
+//         ...prevMessages,
+//         { type: "user", content: text },
+//       ]);
+//       setHideTopContent(true); // Hide the top content after the first message is sent
+  
+//       try {
+//         const response = await fetch('/api/openai', {
+//           method: 'POST',
+//           headers: {
+//             'Content-Type': 'application/json',
+//           },
+//           body: JSON.stringify({ message: text }), // Send the user's message
+//         });
+  
+//         const data = await response.json();
+  
+//         if (response.ok) {
+//           // Add the bot's response to the conversation
+//           setMessages((prevMessages) => [
+//             ...prevMessages,
+//             { type: 'bot', content: data.botMessage },
+//           ]);
+//         } else {
+//           throw new Error(data.error || 'Failed to get response');
+//         }
+//       } catch (error) {
+//         console.error('Error fetching AI response:', error);
+//         setMessages((prevMessages) => [
+//           ...prevMessages,
+//           { type: 'bot', content: "Sorry, I couldn't fetch a response." }, // Fallback error message
+//         ]);
+//       }
+//     }
+//   };

@@ -45,10 +45,10 @@ const TextAreaWithIcons: React.FC<TextAreaWithIconsProps> = ({ onSend }) => {
           value={text}
           onChange={handleInput}
           onKeyPress={handleKeyPress} // Listen for Enter key
-          className="resize-none text-[#292d32] text-base font-medium font-galano w-[85vw] lg:w-[777px] lg:h-[120px] h-[110px] text-left  px-4 py-4 rounded-bl-2xl rounded-br-2xl border-none shadow  focus:outline-none focus:border-transparent"
+          className="resize-none text-[#292d32] text-[14px] lg:text-base font-medium font-galano w-[85vw] lg:w-[777px] lg:h-[120px] h-[110px] text-left  px-4 py-4 rounded-bl-2xl rounded-br-2xl border-none shadow  focus:outline-none focus:border-transparent"
           data-gramm="false"
           style={{
-            paddingTop: "8px",
+            paddingTop: "10px",
             paddingBottom: "16px",
             paddingRight: "90px",
             lineHeight: "1.5rem",
