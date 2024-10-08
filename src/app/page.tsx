@@ -150,16 +150,16 @@ export default function Home() {
         </div>
       </header>
 
-      <div className="flex items-center justify-end h-full mt-8 overflow-y-hidden">
+      <div className="flex items-center justify-end h-full overflow-hidden">
         <div
-          className={`flex flex-col items-center justify-end w-full h-full mb-[4rem] transition-transform duration-300 ease-in-out ${
+          className={`flex flex-col items-center justify-end w-full h-full mb-[2rem] transition-transform duration-300 ease-in-out ${
             isSidebarOpen ? "lg:mr-[-150px]" : "ml-0"
           }`}
         >
           {/* Conditionally render top content */}
           {!hideTopContent && (
             <div className="flex flex-col items-center gap-5">
-              <div className="text-center text-[#292d32] text-[30px] lg:text-5xl font-bold font-galano">
+              <div className="text-center text-[#292d32] text-[30px] lg:text-5xl font-bold font-galano  mt-4">
                 Hey Buddy, <br className="lg:hidden -mt-5" /> Welcome to Roamie
               </div>
               <div className="w-[90vw] lg:w-[806px] text-center text-[#646d80] text-sm lg:text-base font-galano">
@@ -170,7 +170,7 @@ export default function Home() {
             </div>
           )}
 
-          <ScrollArea className="max-h-[55vh] lg:max-h-[50vh] 2xl:max-h-[63vh]" ref={scrollRef}>
+          <ScrollArea className="max-h-[50vh] lg:max-h-[50vh] 2xl:max-h-[63vh]" ref={scrollRef}>
             <div className="w-[93vw] lg:w-[836px] flex flex-col items-center pt-[1px]">
               {/* Chat Bubbles */}
               <div className="w-full">
