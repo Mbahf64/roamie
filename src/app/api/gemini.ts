@@ -42,8 +42,6 @@
 
 
 
-
-
 // Import necessary modules
 import { NextApiRequest, NextApiResponse } from 'next';
 import { GoogleGenerativeAI } from '@google/generative-ai';
@@ -75,11 +73,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const botResponse = response.response?.text || 'No response from AI';
 
     return res.status(200).json({ message: botResponse });
-  } catch (error: any) {
-    console.error('Error with Gemini API:', error.response?.data || error.message);
+  } catch (error: unknown) {  // Use unknown to handle potential different error types
+    console.error('Error with Gemini API:', (error as Error).message);  // Casting to Error type for access to `message`
     return res.status(500).json({
       error: 'Failed to fetch response from Gemini API',
-      details: error.message,
+      details: (error as Error).message,
     });
   }
 }
