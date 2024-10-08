@@ -28,38 +28,38 @@ export default function Home() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-
+  // Function to handle sending a message
   const handleSendMessage = async (text: string) => {
     if (text.trim()) {
       // Add the user's message to the conversation
       setMessages((prevMessages) => [
         ...prevMessages,
-        { type: 'user', content: text },
+        { type: "user", content: text },
       ]);
-      setHideTopContent(true); // Hide top content after the first message is sent
-
+      setHideTopContent(true); // Hide the top content after the first message is sent
+  
       try {
-        const response = await fetch('/api/gemini', {
+        const response = await fetch('/api/openai', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ prompt: text }), // Send the user's prompt
+          body: JSON.stringify({ message: text }), // Send the user's message
         });
-
+  
         const data = await response.json();
-
+  
         if (response.ok) {
           // Add the bot's response to the conversation
           setMessages((prevMessages) => [
             ...prevMessages,
-            { type: 'bot', content: data.message },
+            { type: 'bot', content: data.botMessage },
           ]);
         } else {
-          throw new Error(data.error || 'Failed to get a response');
+          throw new Error(data.error || 'Failed to get response');
         }
       } catch (error) {
-        console.error('Error fetching Gemini response:', error);
+        console.error('Error fetching AI response:', error);
         setMessages((prevMessages) => [
           ...prevMessages,
           { type: 'bot', content: "Sorry, I couldn't fetch a response." }, // Fallback error message
@@ -67,7 +67,6 @@ export default function Home() {
       }
     }
   };
-  
   
 
 
@@ -151,20 +150,19 @@ export default function Home() {
         </div>
       </header>
 
-      <div className="flex items-center justify-end h-full">
-      <div
-  className={`flex flex-col items-center justify-end w-full h-full mb-[4rem] transition-transform duration-500 ease-in-out transform ${
-    isSidebarOpen ? "lg:ml-[200px]" : "lg:translate-x-0"
-  }`}
->
-
+      <div className="flex items-center justify-end h-full mt-8 overflow-y-hidden">
+        <div
+          className={`flex flex-col items-center justify-end w-full h-full mb-[4rem] transition-transform duration-300 ease-in-out ${
+            isSidebarOpen ? "lg:mr-[-150px]" : "ml-0"
+          }`}
+        >
           {/* Conditionally render top content */}
           {!hideTopContent && (
             <div className="flex flex-col items-center gap-5">
               <div className="text-center text-[#292d32] text-[30px] lg:text-5xl font-bold font-galano">
-                Hey Buddy, <br className="lg:hidden" /> Welcome to Roamie
+                Hey Buddy, <br className="lg:hidden -mt-5" /> Welcome to Roamie
               </div>
-              <div className="w-[85vw] lg:w-[806px] text-center text-[#646d80] text-sm lg:text-base font-galano">
+              <div className="w-[90vw] lg:w-[806px] text-center text-[#646d80] text-sm lg:text-base font-galano">
                 Ask Roamie anything about your trip, and let him make your
                 travel planning easy, fast, and stress-free!
               </div>
